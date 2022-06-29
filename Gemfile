@@ -50,6 +50,7 @@ gem 'devise'
 # bootstrap forms
 gem 'bootstrap_form', '~> 5.1'
 gem 'devise-bootstrap-views', '~> 1.0'
+# gem 'devise-bootstrap-form', '<= 0.2.0'
 
 # font awesome icons
 gem 'font-awesome-rails'
