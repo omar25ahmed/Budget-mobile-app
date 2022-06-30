@@ -1,7 +1,7 @@
-<h1>Deals of categories</h1>
+<h1 class="text-center"><%= @category.name.capitalize %>: <%= @category.deals.map {|deal| deal.amount }.sum %>$</h1>
 
 <div id="category-deals">
-  <% @category_deals.each do |category_deal| %>
+  <% @category.deals.each do |category_deal| %>
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title"><%= category_deal.name %></h5>

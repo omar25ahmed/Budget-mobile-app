@@ -1,12 +1,12 @@
 
-<h1>Categories</h1>
+<h1 class="text-center">Categories</h1>
 
 <div id="categories">
   <% @categories.each do |category| %>
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title"><%= fa_icon "#{category.icon}" %><%= category.name %></h5>
-        <p class="card-text">Total amount of transactions:</p>
+        <p class="card-text">Total amount of transactions: <%= category.deals.map {|deal| deal.amount }.sum %>$</p>
         <%= link_to "Show this category", category, class: "btn btn-primary"%>
       </div>
     </div>
