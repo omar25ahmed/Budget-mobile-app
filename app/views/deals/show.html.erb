@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @deal %>
-
 <div>
-  <%= link_to "Edit this deal", edit_deal_path(@deal) %> |
-  <%= link_to "Back to deals", deals_path %>
+    <h1> <%= @deal_show.name %> </h1>
+    <h5><%= @deal_show.amount %></h5>
+  <%= link_to "Back to home", categories_path, class: 'btn btn-dark mb-2' %>
 
-  <%= button_to "Destroy this deal", @deal, method: :delete %>
+  <%= button_to "Destroy this deal", "/categories/#{params[:category_id]}/deals/#{params[:id]}", method: :delete, class: 'btn btn-danger' %>
 </div>

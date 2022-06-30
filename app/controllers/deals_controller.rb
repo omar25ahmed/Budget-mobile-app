@@ -8,7 +8,9 @@ class DealsController < ApplicationController
   end
 
   # GET /deals/1 or /deals/1.json
-  def show; end
+  def show
+    @deal_show = Deal.find(params[:id])
+  end
 
   # GET /deals/new
   def new
