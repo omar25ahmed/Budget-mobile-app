@@ -31,7 +31,6 @@ RSpec.describe 'Deal', type: :system do
       fill_in 'Name', with: 'New deal'
       fill_in 'Amount', with: '100'
       page.check("deal_category_id_#{@category.id}")
-      sleep(5)
       click_button 'Add transaction'
       expect(page).to have_content('Deal was successfully created.')
     end
