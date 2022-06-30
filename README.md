@@ -7,6 +7,8 @@ The Ruby on Rails capstone project is about building a mobile web application wh
 
 ## Getting Started
 
+[Live demo](https://budget-mobile-omar.herokuapp.com/)
+
 ### Prerequisites
 
 - Ruby
