@@ -24,7 +24,7 @@ RSpec.describe 'Deal', type: :system do
       expect(page).to have_content(@category.name)
     end
     it 'should have deals amount' do
-      expect(page).to have_content(@category.deals.map{|deal| deal.amount}.sum)
+      expect(page).to have_content(@category.deals.map(&:amount).sum)
     end
     it 'should not create a new deal if no category' do
       click_link 'Add new deal'

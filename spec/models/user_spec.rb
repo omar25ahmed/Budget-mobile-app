@@ -5,7 +5,6 @@ RSpec.describe User, type: :model do
     before(:each) do
       @user = User.create(name: 'Jane Doe', email: 'a@a', password: '123456', confirmed_at: Time.now)
       @category = Category.create(name: 'Sport', icon: 'icon', user_id: @user.id)
-
     end
     it 'should be valid' do
       expect(@user).to be_valid
