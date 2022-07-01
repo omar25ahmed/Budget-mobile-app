@@ -8,15 +8,12 @@ class DealsController < ApplicationController
   end
 
   # GET /deals/1 or /deals/1.json
-  def show
-    @deal_show = Deal.find(params[:id])
-  end
+  def show; end
 
   # GET /deals/new
   def new
     @deal = Deal.new
     @categories = current_user.categories
-    @category = Category.find(params[:category_id])
   end
 
   # GET /deals/1/edit
@@ -24,14 +21,12 @@ class DealsController < ApplicationController
 
   # POST /deals or /deals.json
   def create
-    @deal = Deal.new(deal_params)
-    @deal.user = current_user
+    @deal = current_user.deals.new(deal_params)
 
     respond_to do |format|
       if @deal.save
         format.html { redirect_to categories_path, notice: 'Deal was successfully created.' }
         format.json { render :show, status: :created, location: @deal }
-        category_deal(@deal)
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @deal.errors, status: :unprocessable_entity }
@@ -57,7 +52,7 @@ class DealsController < ApplicationController
     @deal.destroy
 
     respond_to do |format|
-      format.html { redirect_to deals_url, notice: 'Deal was successfully destroyed.' }
+      format.html { redirect_to category_url(params[:category_id]), notice: 'Deal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,19 +66,13 @@ class DealsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def deal_params
-    params.require(:deal).permit(:name, :amount)
+    params.require(:deal).permit(:name, :amount, category_ids: [])
   end
 
   def validate_checkbox
-    return unless params[:deal][:category_id].length == 1
+    return unless params[:deal][:category_ids].length == 1
 
     flash[:alert] = 'Please select at least one category.'
     redirect_to new_category_deal_path
-  end
-
-  def category_deal(deal)
-    params[:deal][:category_id].each do |category|
-      Category.find_by_id(category.to_i).deals.push(deal) unless category == ''
-    end
   end
 end

@@ -1,7 +1,7 @@
 <div>
-    <h1> <%= @deal_show.name %> </h1>
-    <h5><%= @deal_show.amount %></h5>
+    <h1> <%= @deal.name %> </h1>
+    <h5><%= @deal.amount %></h5>
   <%= link_to "Back to home", categories_path, class: 'btn btn-dark mb-2' %>
 
-  <%= button_to "Destroy this deal", "/categories/#{params[:category_id]}/deals/#{params[:id]}", method: :delete, class: 'btn btn-danger' %>
+  <%= button_to "Destroy this deal", category_deal_path(params[:category_id], @deal.id), method: :delete, class: 'btn btn-danger' %>
 </div>

@@ -14,7 +14,7 @@
   <%= bootstrap_form_with url: category_deals_path, scope: :deal do |f| %>
     <%= f.text_field :name, wrapper: { class: 'text-primary' } %>
     <%= f.text_field :amount, wrapper: { class: 'text-primary' } %>
-    <%= f.collection_check_boxes :category_id, @categories, :id, :name %>
+    <%= f.collection_check_boxes :category_ids, @categories, :id, :name %>
     <div class="my-3 text-center">
       <%= f.submit "Add transaction", class: "btn btn-primary" %>
     </div>
