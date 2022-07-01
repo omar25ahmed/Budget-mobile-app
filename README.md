@@ -59,6 +59,9 @@ bundle exec rspec spec
 - LinkedIn: [https://www.linkedin.com/in/omar-ragheb/](https://www.linkedin.com/in/omar-ragheb/)
 - Twitter: [https://twitter.com/Omar25Ahmed](https://twitter.com/Omar25Ahmed)
 
+## Acknowledgements
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella). 
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
