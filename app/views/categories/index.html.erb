@@ -1,0 +1,18 @@
+
+<h1 class="text-center">Categories</h1>
+
+<div id="categories">
+  <% @categories.each do |category| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="d-flex justify-content-between py-2">
+          <h5 class="card-title"><%= fa_icon "#{category.icon}" %> <%= category.name %></h5>
+          <p class="card-text"> <%= category.deals.map {|deal| deal.amount }.sum %>$</p>
+        </div>
+        <%= link_to "Show this category", category, class: "btn btn-primary"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New category", new_category_path, class: "category-button fixed-bottom"%>

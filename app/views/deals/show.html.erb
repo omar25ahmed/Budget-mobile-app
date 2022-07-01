@@ -1,0 +1,7 @@
+<div>
+    <h1> <%= @deal_show.name %> </h1>
+    <h5><%= @deal_show.amount %></h5>
+  <%= link_to "Back to home", categories_path, class: 'btn btn-dark mb-2' %>
+
+  <%= button_to "Destroy this deal", "/categories/#{params[:category_id]}/deals/#{params[:id]}", method: :delete, class: 'btn btn-danger' %>
+</div>

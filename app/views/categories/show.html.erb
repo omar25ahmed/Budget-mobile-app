@@ -1,0 +1,15 @@
+<h1 class="text-center"><%= @category.name.capitalize %>: <%= @category.deals.map {|deal| deal.amount }.sum %>$</h1>
+
+<div id="category-deals">
+  <% @category.deals.each do |category_deal| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= category_deal.name %></h5>
+        <p class="card-text">Amount: <%= category_deal.amount %></p>
+       <%= link_to "Show this transaction", "/categories/#{params[:id]}/deals/#{category_deal.id}" , class: "btn btn-primary"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Add new deal", new_category_deal_path(params[:id]), class: "category-button"%>

@@ -1,0 +1,23 @@
+<%= form_with url: category_deals_path do |form| %>
+  <% if @deal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+        <% @deal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= bootstrap_form_with url: category_deals_path, scope: :deal do |f| %>
+    <%= f.text_field :name, wrapper: { class: 'text-primary' } %>
+    <%= f.text_field :amount, wrapper: { class: 'text-primary' } %>
+    <%= f.collection_check_boxes :category_id, @categories, :id, :name %>
+    <div class="my-3 text-center">
+      <%= f.submit "Add transaction", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+<% end %>

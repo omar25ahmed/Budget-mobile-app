@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require rails_bootstrap_forms
+ *= require font-awesome
+ */
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+body {
+  background-color: #f1f2f3;
+}
+
+main {
+  height: 60vh;
+}
+
+.showcase h1 {
+  font-family: 'Yellowtail', cursive;
+  font-size: 2.5rem;
+}
+
+/* .register {
+  position: fixed;
+  bottom: 10px;
+} */
+
+.log-in,
+.sign-up,
+.category-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  height: 50px;
+  line-height: 50px;
+}
+
+.log-in {
+  color: #fff;
+  background-color: #3878c3;
+}
+
+.sign-up {
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.category-button {
+  color: #fff;
+  background-color: #60b425;
+}
+
+.back {
+  color: black;
+  font-size: 1.5rem;
+}
