@@ -7,9 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1 or /categories/1.json
-  def show
-    @category = Category.find(params[:id])
-  end
+  def show; end
 
   # GET /categories/new
   def new
@@ -21,8 +19,7 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
-    @category.user = current_user
+    @category = current_user.categories.new(category_params)
 
     respond_to do |format|
       if @category.save
